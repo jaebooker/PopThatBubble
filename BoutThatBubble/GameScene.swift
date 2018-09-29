@@ -13,14 +13,32 @@ class GameScene: SKScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
+    var score: Int = 0
     var bubble: Bubble?
-    
+    func hyrda() {
+        bubble = Bubble()
+        bubble?.physicsBody?.isDynamic = true
+        bubble?.physicsBody?.affectedByGravity = false
+        bubble?.position.x = 0
+        bubble?.position.y = CGFloat.random(in: Range<CGFloat>(uncheckedBounds: (lower: -627.0, upper: 627.0)))
+        addChild(bubble!)
+        moveThatBubble()
+    }
+    func moveThatBubble() {
+        let moveUp = SKAction.moveBy(x: 0,
+                                     y: 400,
+                                     duration: 2.0)
+        let removeNode = SKAction.removeFromParent()
+        let sequence = SKAction.sequence([moveUp, removeNode])
+        bubble?.run(sequence)
+    }
     override func didMove(to view: SKView) {
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
+            label.text = "\(score)"
         }
         
         // Create shape node to use during mouse interaction
@@ -39,11 +57,7 @@ class GameScene: SKScene {
 //        let player = SKSpriteNode(imageNamed: "bibble.jpg")
 //        let moveFiveTimes = SKAction.repeat(moveAction, count: 5)
 //        player.run(moveFiveTimes)
-        bubble = Bubble()
-        bubble?.physicsBody?.isDynamic = true
-        bubble?.position.x = 0
-        bubble?.position.y = CGFloat.random(in: Range<CGFloat>(uncheckedBounds: (lower: -627.0, upper: 627.0)))
-        addChild(bubble!)
+        hyrda()
     }
     
     
@@ -72,11 +86,20 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self)
+        //find out if screen was touched on the bubble
+        if atPoint(location) == bubble {
+            bubble!.removeFromParent()
+            score += 1
+            hyrda()
+            hyrda()
+            print(score)
+        }
         if let label = self.label {
             label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
         }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        for t in touches { self.touchDown(atPoint: t.location(in: self))}
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
