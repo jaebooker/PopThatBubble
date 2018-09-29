@@ -14,23 +14,23 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     var score: Int = 0
-    var bubble: Bubble?
-    func hyrda() {
-        bubble = Bubble()
-        bubble?.physicsBody?.isDynamic = true
-        bubble?.physicsBody?.affectedByGravity = false
-        bubble?.position.x = 0
-        bubble?.position.y = CGFloat.random(in: Range<CGFloat>(uncheckedBounds: (lower: -627.0, upper: 627.0)))
-        addChild(bubble!)
-        moveThatBubble()
+    func createBubble() {
+        let bubble: Bubble = Bubble()
+        bubble.name = "bubble"
+        bubble.physicsBody?.isDynamic = true
+        bubble.physicsBody?.affectedByGravity = false
+        bubble.position.x = 425
+        bubble.position.y = CGFloat.random(in: Range<CGFloat>(uncheckedBounds: (lower: -627.0, upper: 627.0)))
+        addChild(bubble)
+        moveThatBubble(bubble: bubble)
     }
-    func moveThatBubble() {
-        let moveUp = SKAction.moveBy(x: 0,
-                                     y: 400,
-                                     duration: 2.0)
+    func moveThatBubble(bubble: Bubble) {
+        let moveUp = SKAction.moveBy(x: -1000,
+                                     y: 0,
+                                     duration: 5.0)
         let removeNode = SKAction.removeFromParent()
         let sequence = SKAction.sequence([moveUp, removeNode])
-        bubble?.run(sequence)
+        bubble.run(sequence)
     }
     override func didMove(to view: SKView) {
         // Get label node from scene and store it for use later
@@ -57,7 +57,7 @@ class GameScene: SKScene {
 //        let player = SKSpriteNode(imageNamed: "bibble.jpg")
 //        let moveFiveTimes = SKAction.repeat(moveAction, count: 5)
 //        player.run(moveFiveTimes)
-        hyrda()
+        createBubble()
     }
     
     
@@ -89,12 +89,12 @@ class GameScene: SKScene {
         let touch = touches.first!
         let location = touch.location(in: self)
         //find out if screen was touched on the bubble
-        if atPoint(location) == bubble {
-            bubble!.removeFromParent()
+        if atPoint(location).name == "bubble" {
+            atPoint(location).removeFromParent()
             score += 1
-            hyrda()
-            hyrda()
-            print(score)
+            label!.text = "\(score)"
+            createBubble()
+            createBubble()
         }
         if let label = self.label {
             label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
