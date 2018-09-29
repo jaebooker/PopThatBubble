@@ -16,6 +16,7 @@ class GameScene: SKScene {
     var score: Int = 0
     var bubbleSpeed: Double = 10.0
     var bubbleCount: Int = 0
+    var soundSwitch: Int = 0
     func createBubble() {
         let bubble: Bubble = Bubble()
         bubble.name = "bubble"
@@ -36,6 +37,8 @@ class GameScene: SKScene {
         bubble.run(sequence)
     }
     override func didMove(to view: SKView) {
+        let backgroundSound = SKAudioNode(fileNamed: "bubble.mp3")
+        self.addChild(backgroundSound)
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "scoreCard") as? SKLabelNode
         if let label = self.label {
@@ -61,9 +64,28 @@ class GameScene: SKScene {
         let location = touch.location(in: self)
         //find out if screen was touched on the bubble
         if atPoint(location).name == "bubble" {
+            var bubbleSound: SKAudioNode
+            if soundSwitch == 0 {
+                bubbleSound = SKAudioNode(fileNamed: "drum_snare1.mp3")
+                soundSwitch = 1
+            } else {
+                bubbleSound = SKAudioNode(fileNamed: "drum_snare2.wav")
+                soundSwitch = 0
+            }
+            bubbleSound.autoplayLooped = false
+            addChild(bubbleSound)
+            self.run(SKAction.sequence([
+                SKAction.wait(forDuration: 0.5),
+                SKAction.run {
+                    // this will start playing the sound
+                    bubbleSound.run(SKAction.play())
+                }]))
             atPoint(location).removeFromParent()
+//            let sound = SKAudioNode(fileNamed: "drum_snare1.wav")
+//            addChild(sound)
+//            let removeSound = sound.removeFromParent()
             score += 1
-            bubbleSpeed -= 0.5
+            bubbleSpeed -= 0.25
             label!.text = "\(score)"
             createBubble()
             createBubble()
