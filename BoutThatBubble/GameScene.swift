@@ -13,6 +13,7 @@ class GameScene: SKScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
+    let backgroundSound = SKAudioNode(fileNamed: "bubbleMusic.mp3")
     var score: Int = 0
     var bubbleSpeed: Double = 10.0
     var bubbleCount: Int = 0
@@ -37,7 +38,6 @@ class GameScene: SKScene {
         bubble.run(sequence)
     }
     override func didMove(to view: SKView) {
-        let backgroundSound = SKAudioNode(fileNamed: "bubble.mp3")
         self.addChild(backgroundSound)
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "scoreCard") as? SKLabelNode
@@ -66,10 +66,10 @@ class GameScene: SKScene {
         if atPoint(location).name == "bubble" {
             var bubbleSound: SKAudioNode
             if soundSwitch == 0 {
-                bubbleSound = SKAudioNode(fileNamed: "drum_snare1.mp3")
+                bubbleSound = SKAudioNode(fileNamed: "drumSnare1.mp3")
                 soundSwitch = 1
             } else {
-                bubbleSound = SKAudioNode(fileNamed: "drum_snare2.wav")
+                bubbleSound = SKAudioNode(fileNamed: "drumSnare2.wav")
                 soundSwitch = 0
             }
             bubbleSound.autoplayLooped = false

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D8A11B8215F62830017BF5E /* bubble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11B7215F62830017BF5E /* bubble.mp3 */; };
-		0D8A11BA215F66AD0017BF5E /* drum_snare1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11B9215F66AC0017BF5E /* drum_snare1.mp3 */; };
-		0D8A11BC215F66B50017BF5E /* drum_snare2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11BB215F66B50017BF5E /* drum_snare2.wav */; };
+		0D4451D121602A4700481156 /* underagua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451D021602A4700481156 /* underagua.jpg */; };
+		0D4451D921603B7400481156 /* bubbleMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451D821603B7400481156 /* bubbleMusic.mp3 */; };
+		0D8A11BA215F66AD0017BF5E /* drumSnare1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11B9215F66AC0017BF5E /* drumSnare1.mp3 */; };
+		0D8A11BC215F66B50017BF5E /* drumSnare2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11BB215F66B50017BF5E /* drumSnare2.wav */; };
 		0DE6330A215DB1B600BF5E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE63309215DB1B600BF5E67 /* AppDelegate.swift */; };
 		0DE6330C215DB1B600BF5E67 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6330B215DB1B600BF5E67 /* GameScene.sks */; };
 		0DE6330E215DB1B600BF5E67 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6330D215DB1B600BF5E67 /* Actions.sks */; };
@@ -43,9 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D8A11B7215F62830017BF5E /* bubble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bubble.mp3; sourceTree = "<group>"; };
-		0D8A11B9215F66AC0017BF5E /* drum_snare1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drum_snare1.mp3; sourceTree = "<group>"; };
-		0D8A11BB215F66B50017BF5E /* drum_snare2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drum_snare2.wav; sourceTree = "<group>"; };
+		0D4451D021602A4700481156 /* underagua.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underagua.jpg; sourceTree = "<group>"; };
+		0D4451D821603B7400481156 /* bubbleMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bubbleMusic.mp3; path = "../../../Movies/Movavi Library/bubbleMusic.mp3"; sourceTree = "<group>"; };
+		0D8A11B9215F66AC0017BF5E /* drumSnare1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drumSnare1.mp3; sourceTree = "<group>"; };
+		0D8A11BB215F66B50017BF5E /* drumSnare2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumSnare2.wav; sourceTree = "<group>"; };
 		0DE63306215DB1B600BF5E67 /* BoutThatBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutThatBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE63309215DB1B600BF5E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DE6330B215DB1B600BF5E67 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -115,11 +117,12 @@
 		0DE63308215DB1B600BF5E67 /* BoutThatBubble */ = {
 			isa = PBXGroup;
 			children = (
+				0D4451D821603B7400481156 /* bubbleMusic.mp3 */,
 				0DE63309215DB1B600BF5E67 /* AppDelegate.swift */,
-				0D8A11B7215F62830017BF5E /* bubble.mp3 */,
-				0D8A11B9215F66AC0017BF5E /* drum_snare1.mp3 */,
+				0D4451D021602A4700481156 /* underagua.jpg */,
+				0D8A11B9215F66AC0017BF5E /* drumSnare1.mp3 */,
 				0DE6330B215DB1B600BF5E67 /* GameScene.sks */,
-				0D8A11BB215F66B50017BF5E /* drum_snare2.wav */,
+				0D8A11BB215F66B50017BF5E /* drumSnare2.wav */,
 				0DE6330D215DB1B600BF5E67 /* Actions.sks */,
 				0DE6330F215DB1B600BF5E67 /* GameScene.swift */,
 				0DE63311215DB1B600BF5E67 /* GameViewController.swift */,
@@ -256,15 +259,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D8A11B8215F62830017BF5E /* bubble.mp3 in Resources */,
-				0D8A11BC215F66B50017BF5E /* drum_snare2.wav in Resources */,
+				0D4451D121602A4700481156 /* underagua.jpg in Resources */,
+				0D8A11BC215F66B50017BF5E /* drumSnare2.wav in Resources */,
 				0DE63315215DB1B600BF5E67 /* Main.storyboard in Resources */,
 				0DE6330C215DB1B600BF5E67 /* GameScene.sks in Resources */,
 				0DE63317215DB1B800BF5E67 /* Assets.xcassets in Resources */,
 				0DE6333E215DB64C00BF5E67 /* background.jpg in Resources */,
+				0D4451D921603B7400481156 /* bubbleMusic.mp3 in Resources */,
 				0DE6331A215DB1B800BF5E67 /* LaunchScreen.storyboard in Resources */,
 				0DE6330E215DB1B600BF5E67 /* Actions.sks in Resources */,
-				0D8A11BA215F66AD0017BF5E /* drum_snare1.mp3 in Resources */,
+				0D8A11BA215F66AD0017BF5E /* drumSnare1.mp3 in Resources */,
 				0DE63340215DB65800BF5E67 /* bibble.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
