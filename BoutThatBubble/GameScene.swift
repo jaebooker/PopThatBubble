@@ -15,11 +15,11 @@ class GameScene: SKScene {
     private var spinnyNode : SKShapeNode?
     let backgroundSound = SKAudioNode(fileNamed: "bubbleMusic.mp3")
     var score: Int = 0
-    var bubbleSpeed: Double = 10.0
+    var bubbleSpeedCount: Double = 10.0
     var bubbleCount: Int = 0
     var soundSwitch: Int = 0
-    func createBubble(name: String, image: String) {
-        let bubble: Bubble = Bubble(image: image)
+    func createBubble(name: String, image: String, bubbleSpeed: Double, sizeType: String) {
+        let bubble: Bubble = Bubble(image: image, sizeType: sizeType)
         bubble.name = name
         bubble.physicsBody?.isDynamic = true
         bubble.physicsBody?.affectedByGravity = false
@@ -27,9 +27,9 @@ class GameScene: SKScene {
         bubble.position.y = CGFloat.random(in: Range<CGFloat>(uncheckedBounds: (lower: -627.0, upper: 627.0)))
         addChild(bubble)
         bubbleCount += 1
-        moveThatBubble(bubble: bubble)
+        moveThatBubble(bubble: bubble, bubbleSpeed: bubbleSpeed)
     }
-    func moveThatBubble(bubble: Bubble) {
+    func moveThatBubble(bubble: Bubble, bubbleSpeed: Double) {
         let moveUp = SKAction.moveBy(x: -1000,
                                      y: 0,
                                      duration: bubbleSpeed)
@@ -46,7 +46,7 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
             label.text = "\(score)"
         }
-        createBubble(name: "bubble", image: "bibble")
+        createBubble(name: "bubble", image: "bibble", bubbleSpeed: bubbleSpeedCount, sizeType: "normal")
     }
     
     
@@ -85,13 +85,19 @@ class GameScene: SKScene {
 //            addChild(sound)
 //            let removeSound = sound.removeFromParent()
             score += 1
-            bubbleSpeed -= 0.25
+            bubbleSpeedCount -= 0.25
             label!.text = "\(score)"
-            createBubble(name: "bubble", image: "bibble")
-            createBubble(name: "bubble", image: "bibble")
+            createBubble(name: "bubble", image: "bibble", bubbleSpeed: bubbleSpeedCount, sizeType: "normal")
+            createBubble(name: "bubble", image: "bibble", bubbleSpeed: bubbleSpeedCount, sizeType: "normal")
             bubbleCount -= 1
             if score % 3 == 0 {
-                createBubble(name: "redBubble", image: "redBubble")
+                createBubble(name: "redBubble", image: "redBubble", bubbleSpeed: bubbleSpeedCount, sizeType: "normal")
+            }
+            if score % 5 == 0 {
+                createBubble(name: "goldBubble", image: "goldBubble", bubbleSpeed: bubbleSpeedCount - 3, sizeType: "extra big")
+            }
+            if score % 10 == 0 {
+                createBubble(name: "goldBubble", image: "goldBubble", bubbleSpeed: bubbleSpeedCount - 2, sizeType: "big")
             }
         } else if atPoint(location).name == "redBubble" {
             score += 5
@@ -106,9 +112,25 @@ class GameScene: SKScene {
                     redBubbleSound.run(SKAction.play())
                 }]))
             atPoint(location).removeFromParent()
-            createBubble(name: "bubble", image: "bibble")
-            createBubble(name: "bubble", image: "bibble")
-            bubbleSpeed += 0.25
+            createBubble(name: "bubble", image: "bibble", bubbleSpeed: bubbleSpeedCount + 1, sizeType: "small")
+            createBubble(name: "bubble", image: "bibble", bubbleSpeed: bubbleSpeedCount + 1, sizeType: "small")
+            bubbleSpeedCount += 0.25
+        } else if atPoint(location).name == "goldBubble" {
+            score += 20
+            label!.text = "\(score)"
+            let redBubbleSound = SKAudioNode(fileNamed: "siren.mp3")
+            redBubbleSound.autoplayLooped = false
+            addChild(redBubbleSound)
+            self.run(SKAction.sequence([
+                SKAction.wait(forDuration: 0.5),
+                SKAction.run {
+                    // this will start playing the sound
+                    redBubbleSound.run(SKAction.play())
+                }]))
+            atPoint(location).removeFromParent()
+            createBubble(name: "redBubble", image: "redBubble", bubbleSpeed: bubbleSpeedCount - 3, sizeType: "big")
+            createBubble(name: "redBubble", image: "redBubble", bubbleSpeed: bubbleSpeedCount - 3, sizeType: "big")
+            bubbleSpeedCount += 0.5
         }
         for t in touches { self.touchDown(atPoint: t.location(in: self))}
     }
@@ -146,9 +168,9 @@ class GameScene: SKScene {
             label!.text = "\(score)"
             backgroundSound.removeFromParent()
             addChild(backgroundSound)
-            bubbleSpeed = 10
+            bubbleSpeedCount = 10
             bubbleCount = 0
-            createBubble(name: "bubble", image: "bibble")
+            createBubble(name: "bubble", image: "bibble", bubbleSpeed: bubbleSpeedCount, sizeType: "normal")
         }
     }
 }

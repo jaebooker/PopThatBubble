@@ -12,6 +12,7 @@
 		0D4451E521605BA200481156 /* redBubble4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451E421605BA200481156 /* redBubble4.png */; };
 		0D4451E7216062D000481156 /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451E6216062D000481156 /* siren.mp3 */; };
 		0D4451E92160729100481156 /* siren2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451E82160729100481156 /* siren2.mp3 */; };
+		0D4451EB216079E300481156 /* goldBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451EA216079E300481156 /* goldBubble.png */; };
 		0D8A11BA215F66AD0017BF5E /* drumSnare1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11B9215F66AC0017BF5E /* drumSnare1.mp3 */; };
 		0D8A11BC215F66B50017BF5E /* drumSnare2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11BB215F66B50017BF5E /* drumSnare2.wav */; };
 		0DE6330A215DB1B600BF5E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE63309215DB1B600BF5E67 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		0D4451E421605BA200481156 /* redBubble4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redBubble4.png; sourceTree = "<group>"; };
 		0D4451E6216062D000481156 /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
 		0D4451E82160729100481156 /* siren2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren2.mp3; sourceTree = "<group>"; };
+		0D4451EA216079E300481156 /* goldBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldBubble.png; sourceTree = "<group>"; };
 		0D8A11B9215F66AC0017BF5E /* drumSnare1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drumSnare1.mp3; sourceTree = "<group>"; };
 		0D8A11BB215F66B50017BF5E /* drumSnare2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumSnare2.wav; sourceTree = "<group>"; };
 		0DE63306215DB1B600BF5E67 /* BoutThatBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutThatBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				0D4451D821603B7400481156 /* bubbleMusic.mp3 */,
 				0DE63309215DB1B600BF5E67 /* AppDelegate.swift */,
 				0D4451E6216062D000481156 /* siren.mp3 */,
+				0D4451EA216079E300481156 /* goldBubble.png */,
 				0D4451E82160729100481156 /* siren2.mp3 */,
 				0D4451D021602A4700481156 /* underagua.jpg */,
 				0D4451E421605BA200481156 /* redBubble4.png */,
@@ -275,6 +278,7 @@
 				0DE6330C215DB1B600BF5E67 /* GameScene.sks in Resources */,
 				0DE63317215DB1B800BF5E67 /* Assets.xcassets in Resources */,
 				0DE6333E215DB64C00BF5E67 /* background.jpg in Resources */,
+				0D4451EB216079E300481156 /* goldBubble.png in Resources */,
 				0D4451D921603B7400481156 /* bubbleMusic.mp3 in Resources */,
 				0D4451E521605BA200481156 /* redBubble4.png in Resources */,
 				0DE6331A215DB1B800BF5E67 /* LaunchScreen.storyboard in Resources */,
