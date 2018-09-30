@@ -18,9 +18,9 @@ class GameScene: SKScene {
     var bubbleSpeed: Double = 10.0
     var bubbleCount: Int = 0
     var soundSwitch: Int = 0
-    func createBubble() {
-        let bubble: Bubble = Bubble()
-        bubble.name = "bubble"
+    func createBubble(name: String, image: String) {
+        let bubble: Bubble = Bubble(image: image)
+        bubble.name = name
         bubble.physicsBody?.isDynamic = true
         bubble.physicsBody?.affectedByGravity = false
         bubble.position.x = 425
@@ -46,7 +46,7 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
             label.text = "\(score)"
         }
-        createBubble()
+        createBubble(name: "bubble", image: "bibble")
     }
     
     
@@ -87,9 +87,27 @@ class GameScene: SKScene {
             score += 1
             bubbleSpeed -= 0.25
             label!.text = "\(score)"
-            createBubble()
-            createBubble()
+            createBubble(name: "bubble", image: "bibble")
+            createBubble(name: "bubble", image: "bibble")
             bubbleCount -= 1
+            if score % 3 == 0 {
+                createBubble(name: "redBubble", image: "redBubble")
+            }
+        } else if atPoint(location).name == "redBubble" {
+            score += 5
+            let redBubbleSound = SKAudioNode(fileNamed: "siren.mp3")
+            redBubbleSound.autoplayLooped = false
+            addChild(redBubbleSound)
+            self.run(SKAction.sequence([
+                SKAction.wait(forDuration: 0.5),
+                SKAction.run {
+                    // this will start playing the sound
+                    redBubbleSound.run(SKAction.play())
+                }]))
+            atPoint(location).removeFromParent()
+            createBubble(name: "bubble", image: "bibble")
+            createBubble(name: "bubble", image: "bibble")
+            bubbleSpeed += 0.25
         }
         for t in touches { self.touchDown(atPoint: t.location(in: self))}
     }

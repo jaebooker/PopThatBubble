@@ -10,8 +10,10 @@ import Foundation
 import SpriteKit
 
 class Bubble: SKSpriteNode {
-    init() {
-        let texture = SKTexture(imageNamed: "bibble")
+    var image: String?
+    init(image: String) {
+        self.image = image
+        let texture = SKTexture(imageNamed: self.image!)
         var size = texture.size()
         size.width = size.width / 10
         size.height = size.height / 10
