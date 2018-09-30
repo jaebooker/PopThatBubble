@@ -95,6 +95,7 @@ class GameScene: SKScene {
             }
         } else if atPoint(location).name == "redBubble" {
             score += 5
+            label!.text = "\(score)"
             let redBubbleSound = SKAudioNode(fileNamed: "siren.mp3")
             redBubbleSound.autoplayLooped = false
             addChild(redBubbleSound)
@@ -127,5 +128,27 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        var bubbleCheck = false
+        enumerateChildNodes(withName: "bubble") { indicatorNode, _ in
+            bubbleCheck = true
+        }
+        if !bubbleCheck {
+            let siren = SKAudioNode(fileNamed: "siren2.mp3")
+            siren.autoplayLooped = false
+            addChild(siren)
+            self.run(SKAction.sequence([
+                SKAction.wait(forDuration: 0.5),
+                SKAction.run {
+                    // this will start playing the sound
+                    siren.run(SKAction.play())
+                }]))
+            score = 0
+            label!.text = "\(score)"
+            backgroundSound.removeFromParent()
+            addChild(backgroundSound)
+            bubbleSpeed = 10
+            bubbleCount = 0
+            createBubble(name: "bubble", image: "bibble")
+        }
     }
 }
