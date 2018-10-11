@@ -17,6 +17,7 @@ class Bubble: SKSpriteNode {
         self.sizeType = sizeType
         let texture = SKTexture(imageNamed: self.image!)
         var size = texture.size()
+        //checks to see what size to make bubble
         if sizeType == "small" {
             size.width = size.width / 20
             size.height = size.height / 20
