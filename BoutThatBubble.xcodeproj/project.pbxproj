@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0D4451D121602A4700481156 /* underagua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451D021602A4700481156 /* underagua.jpg */; };
-		0D4451D921603B7400481156 /* bubbleMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451D821603B7400481156 /* bubbleMusic.mp3 */; };
 		0D4451E521605BA200481156 /* redBubble4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451E421605BA200481156 /* redBubble4.png */; };
 		0D4451E7216062D000481156 /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451E6216062D000481156 /* siren.mp3 */; };
 		0D4451E92160729100481156 /* siren2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451E82160729100481156 /* siren2.mp3 */; };
 		0D4451EB216079E300481156 /* goldBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4451EA216079E300481156 /* goldBubble.png */; };
 		0D8A11BA215F66AD0017BF5E /* drumSnare1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11B9215F66AC0017BF5E /* drumSnare1.mp3 */; };
 		0D8A11BC215F66B50017BF5E /* drumSnare2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A11BB215F66B50017BF5E /* drumSnare2.wav */; };
+		0DDB1A38232F17F3000A24CA /* Raven&KreynCopyrightFreeMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB1A37232F17F2000A24CA /* Raven&KreynCopyrightFreeMusic.mp3 */; };
+		0DDB1A3A232F23D4000A24CA /* Royalty Free Heavy Metal Instrumental - Game Over (Creative Commons).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB1A39232F23D4000A24CA /* Royalty Free Heavy Metal Instrumental - Game Over (Creative Commons).mp3 */; };
 		0DE6330A215DB1B600BF5E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE63309215DB1B600BF5E67 /* AppDelegate.swift */; };
 		0DE6330C215DB1B600BF5E67 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6330B215DB1B600BF5E67 /* GameScene.sks */; };
 		0DE6330E215DB1B600BF5E67 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6330D215DB1B600BF5E67 /* Actions.sks */; };
@@ -49,13 +50,14 @@
 
 /* Begin PBXFileReference section */
 		0D4451D021602A4700481156 /* underagua.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underagua.jpg; sourceTree = "<group>"; };
-		0D4451D821603B7400481156 /* bubbleMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bubbleMusic.mp3; path = "../../../Movies/Movavi Library/bubbleMusic.mp3"; sourceTree = "<group>"; };
 		0D4451E421605BA200481156 /* redBubble4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redBubble4.png; sourceTree = "<group>"; };
 		0D4451E6216062D000481156 /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
 		0D4451E82160729100481156 /* siren2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren2.mp3; sourceTree = "<group>"; };
 		0D4451EA216079E300481156 /* goldBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldBubble.png; sourceTree = "<group>"; };
 		0D8A11B9215F66AC0017BF5E /* drumSnare1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drumSnare1.mp3; sourceTree = "<group>"; };
 		0D8A11BB215F66B50017BF5E /* drumSnare2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumSnare2.wav; sourceTree = "<group>"; };
+		0DDB1A37232F17F2000A24CA /* Raven&KreynCopyrightFreeMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Raven&KreynCopyrightFreeMusic.mp3"; sourceTree = "<group>"; };
+		0DDB1A39232F23D4000A24CA /* Royalty Free Heavy Metal Instrumental - Game Over (Creative Commons).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Royalty Free Heavy Metal Instrumental - Game Over (Creative Commons).mp3"; sourceTree = "<group>"; };
 		0DE63306215DB1B600BF5E67 /* BoutThatBubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutThatBubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE63309215DB1B600BF5E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DE6330B215DB1B600BF5E67 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -125,7 +127,8 @@
 		0DE63308215DB1B600BF5E67 /* BoutThatBubble */ = {
 			isa = PBXGroup;
 			children = (
-				0D4451D821603B7400481156 /* bubbleMusic.mp3 */,
+				0DDB1A37232F17F2000A24CA /* Raven&KreynCopyrightFreeMusic.mp3 */,
+				0DDB1A39232F23D4000A24CA /* Royalty Free Heavy Metal Instrumental - Game Over (Creative Commons).mp3 */,
 				0DE63309215DB1B600BF5E67 /* AppDelegate.swift */,
 				0D4451E6216062D000481156 /* siren.mp3 */,
 				0D4451EA216079E300481156 /* goldBubble.png */,
@@ -276,10 +279,11 @@
 				0D8A11BC215F66B50017BF5E /* drumSnare2.wav in Resources */,
 				0DE63315215DB1B600BF5E67 /* Main.storyboard in Resources */,
 				0DE6330C215DB1B600BF5E67 /* GameScene.sks in Resources */,
+				0DDB1A3A232F23D4000A24CA /* Royalty Free Heavy Metal Instrumental - Game Over (Creative Commons).mp3 in Resources */,
 				0DE63317215DB1B800BF5E67 /* Assets.xcassets in Resources */,
 				0DE6333E215DB64C00BF5E67 /* background.jpg in Resources */,
+				0DDB1A38232F17F3000A24CA /* Raven&KreynCopyrightFreeMusic.mp3 in Resources */,
 				0D4451EB216079E300481156 /* goldBubble.png in Resources */,
-				0D4451D921603B7400481156 /* bubbleMusic.mp3 in Resources */,
 				0D4451E521605BA200481156 /* redBubble4.png in Resources */,
 				0DE6331A215DB1B800BF5E67 /* LaunchScreen.storyboard in Resources */,
 				0DE6330E215DB1B600BF5E67 /* Actions.sks in Resources */,

@@ -8,13 +8,17 @@
 
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 class GameScene: SKScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     //create background music object
-    let backgroundSound = SKAudioNode(fileNamed: "bubbleMusic.mp3")
+//    let backgroundSound = SKAudioNode(fileNamed: "Raven&KreynCopyrightFreeMusic.mp3")
+    var musicForGame = Bundle.main.path(forResource: "Raven&KreynCopyrightFreeMusic", ofType: "mp3")!
+    //"Raven&KreynCopyrightFreeMusic"
+    //"Royalty Free Heavy Metal Instrumental - Game Over (Creative Commons)"
+    var backgroundMusicPlayer = AVAudioPlayer()
     //set score
     var score: Int = 0
     //set initial bubble speed
@@ -42,7 +46,14 @@ class GameScene: SKScene {
         bubble.run(sequence)
     }
     override func didMove(to view: SKView) {
-        self.addChild(backgroundSound)
+//        self.addChild(backgroundSound)
+        do {
+            backgroundMusicPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicForGame))
+        }
+        catch {
+            print(error)
+        }
+        backgroundMusicPlayer.play()
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "scoreCard") as? SKLabelNode
         if let label = self.label {
@@ -188,8 +199,16 @@ class GameScene: SKScene {
             //resets score
             score = 0
             label!.text = "\(score)"
-            backgroundSound.removeFromParent()
-            addChild(backgroundSound)
+            backgroundMusicPlayer.stop()
+            do {
+                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicForGame))
+            }
+            catch {
+                print(error)
+            }
+            backgroundMusicPlayer.play()
+//            backgroundSound.removeFromParent()
+//            addChild(backgroundSound)
             //resets speed
             bubbleSpeedCount = 10
             bubbleCount = 0
