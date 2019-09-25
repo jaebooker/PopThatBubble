@@ -11,7 +11,6 @@
 		0D4298FB233B21170080B259 /* bubble20.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4298FA233B21160080B259 /* bubble20.png */; };
 		0D4298FD233B21980080B259 /* bubble60.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4298FC233B21980080B259 /* bubble60.png */; };
 		0D4298FF233B21C40080B259 /* bubble58.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4298FE233B21C40080B259 /* bubble58.png */; };
-		0D429903233B22220080B259 /* bubble87.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D429902233B22220080B259 /* bubble87.png */; };
 		0D42990D233B23FA0080B259 /* bubble76.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D42990C233B23FA0080B259 /* bubble76.png */; };
 		0D42990F233B24C20080B259 /* bubble152.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D42990E233B24C20080B259 /* bubble152.png */; };
 		0D429911233B25000080B259 /* bubble167.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D429910233B25000080B259 /* bubble167.png */; };
@@ -66,7 +65,6 @@
 		0D4298FA233B21160080B259 /* bubble20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble20.png; sourceTree = "<group>"; };
 		0D4298FC233B21980080B259 /* bubble60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble60.png; sourceTree = "<group>"; };
 		0D4298FE233B21C40080B259 /* bubble58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble58.png; sourceTree = "<group>"; };
-		0D429902233B22220080B259 /* bubble87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble87.png; sourceTree = "<group>"; };
 		0D42990C233B23FA0080B259 /* bubble76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble76.png; sourceTree = "<group>"; };
 		0D42990E233B24C20080B259 /* bubble152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble152.png; sourceTree = "<group>"; };
 		0D429910233B25000080B259 /* bubble167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble167.png; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				0D42990C233B23FA0080B259 /* bubble76.png */,
 				0D42991A233B27400080B259 /* bubble120.png */,
 				0D42990E233B24C20080B259 /* bubble152.png */,
-				0D429902233B22220080B259 /* bubble87.png */,
 				0D429918233B271A0080B259 /* bubble80.png */,
 				0D4298FA233B21160080B259 /* bubble20.png */,
 				0D4298FC233B21980080B259 /* bubble60.png */,
@@ -349,7 +346,6 @@
 				0DE6331A215DB1B800BF5E67 /* LaunchScreen.storyboard in Resources */,
 				0DE6330E215DB1B600BF5E67 /* Actions.sks in Resources */,
 				0D42990F233B24C20080B259 /* bubble152.png in Resources */,
-				0D429903233B22220080B259 /* bubble87.png in Resources */,
 				0D42991D233B276F0080B259 /* bubble180.png in Resources */,
 				0D429917233B26390080B259 /* bubble87.png in Resources */,
 				0D8A11BA215F66AD0017BF5E /* drumSnare1.mp3 in Resources */,
